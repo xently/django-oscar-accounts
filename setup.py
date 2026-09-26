@@ -2,19 +2,20 @@
 from setuptools import find_packages, setup
 
 install_requires = [
-    'django-oscar>=3.0',
-    'python-dateutil>=2.6,<3.0',
+    'django>=5.2,<6.0',
+    'django-oscar>=4.2,<4.3',
+    'python-dateutil>=2.9,<3.0',
 ]
 
 tests_require = [
-    'django-webtest==1.9.10',
-    'pytest-cov>=2.12,<3.1',
-    'pytest-django>=4.4,<4.6',
-    'freezegun>=1.1,<1.3',
+    'django-webtest>=1.9.12,<1.10',
+    'pytest-cov>=6.0',
+    'pytest-django>=4.9',
+    'freezegun>=1.5,<2',
     'sorl-thumbnail',
-    'factory-boy>=3.2,<3.3',
-    'coverage>=5.5,<6.4',
-    'tox>=3.17,<3.26',
+    'factory-boy>=3.3,<4',
+    'coverage>=7.6',
+    'tox>=4.0',
 ]
 
 
@@ -32,18 +33,17 @@ setup(
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
-        'Framework :: Django :: 3.1',
-        'Framework :: Django :: 3.2',
+        'Framework :: Django :: 5.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: Unix',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
     ],
+    python_requires='>=3.12',
     install_requires=install_requires,
     tests_require=tests_require,
     setup_requires=['setuptools_scm'],

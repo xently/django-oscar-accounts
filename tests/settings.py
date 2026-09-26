@@ -6,6 +6,7 @@ from oscar.defaults import *  # noqa F401
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
     }
 }
 
@@ -71,6 +72,7 @@ TEMPLATES = [
 STATIC_URL = '/static/'
 
 SITE_ID = 1
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 ACCOUNTS_UNIT_NAME = 'Giftcard'
 USE_TZ = True
 

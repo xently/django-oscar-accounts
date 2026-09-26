@@ -150,11 +150,16 @@ class Account(models.Model):
         return super().save(*args, **kwargs)
 
     def _balance(self):
+        if self.pk is None:
+            # An unsaved account has no transactions (Django >= 4.1 forbids querying its relations)
+            return D('0.00')
         aggregates = self.transactions.aggregate(sum=Sum('amount'))
         sum = aggregates['sum']
         return D('0.00') if sum is None else sum
 
     def num_transactions(self):
+        if self.pk is None:
+            return 0
         return self.transactions.all().count()
 
     @property

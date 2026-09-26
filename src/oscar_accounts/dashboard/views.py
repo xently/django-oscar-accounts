@@ -39,7 +39,8 @@ class AccountListView(generic.ListView):
         return ctx
 
     def get_queryset(self):
-        queryset = Account.objects.all()
+        # Paginated querysets must be ordered
+        queryset = Account.objects.order_by('-date_created', '-id')
 
         if 'code' not in self.request.GET:
             # Form not submitted
