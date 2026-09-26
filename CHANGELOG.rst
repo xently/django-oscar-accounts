@@ -2,6 +2,14 @@
 Changelog
 =========
 
+Unreleased
+----------
+- Added support for Oscar 4.2, Django 5.2 and Python 3.12 - 3.14.
+- Dropped support for Oscar < 4.2, Django < 5.2 and Python < 3.12.
+- Fixed saving and counting the transactions of unsaved accounts, which Django >= 4.1 forbids.
+- Ordered the dashboard account list, which is paginated.
+- Set ``default_auto_field`` to ``AutoField`` to match the existing migrations.
+
 3.0 (2021-07-17)
 ----------------
 - Added support for Oscar 3.0 and 3.1, Django 3.1 and 3.2.

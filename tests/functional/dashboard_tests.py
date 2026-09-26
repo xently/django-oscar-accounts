@@ -21,9 +21,10 @@ class TestAStaffMember(WebTest):
     def test_can_create_a_new_account(self):
         list_page = self.app.get(reverse('accounts_dashboard:accounts-list'), user=self.staff)
         create_page = list_page.click(linkid="create_new_account")
-        create_page.form['name'] = 'Test account'
-        create_page.form['initial_amount'] = '120.00'
-        response = create_page.form.submit()
+        form = create_page.forms['account_form']
+        form['name'] = 'Test account'
+        form['initial_amount'] = '120.00'
+        response = form.submit()
         self.assertEqual(302, response.status_code)
 
         acc = models.Account.objects.get(name='Test account')

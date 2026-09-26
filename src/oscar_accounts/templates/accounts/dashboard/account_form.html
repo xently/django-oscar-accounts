@@ -33,7 +33,7 @@
 
 <div class="card card-body">
     <h2>{% trans "Edit this account" %}</h2>
-    <form action="." method="post">
+    <form action="." method="post" id="account_form">
         {% csrf_token %}
         <span class="help-block">{{ form.non_field_errors }}</span>
         {% include 'oscar/dashboard/partials/form_field.html' with field=form.name %}
